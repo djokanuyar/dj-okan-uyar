@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Okan Uyar | Premium Sound & Event Management</title>
+    <style>
+        /* 1. Sayfa Temeli ve Tam Ortalama */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            background: #000000;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            scroll-behavior: smooth;
+        }
+
+        /* 2. Ana Kapsayıcı */
+        .container {
+            width: 90%;
+            max-width: 450px;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 3. Logo Çerçevesi */
+        .logo-wrapper {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 3px solid #00f0ff;
+            box-shadow: 0 0 15px #00f0ff; 
+            background-color: #111;
+        }
+        .logo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 4. Profil Yazıları */
+        .bio-text {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            width: 100%;
+        }
+
+        .bio-title {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+            white-space: nowrap;
+        }
+
+        /* ÜÇLÜ HAREKETLİ VE RENKLİ HIZLI İLETİŞİM BUTONLARI */
+        .quick-social-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .quick-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 6px;
+            border-radius: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            background-size: 300% 300%;
+            animation: quickGlow 5s linear infinite;
+        }
+
+        .quick-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .quick-btn:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .btn-call {
+            background-image: linear-gradient(115deg, #0056b3, #007aff, #00d2ff, #0056b3);
+            border: 1px solid #3395ff;
+            box-shadow: 0 0 12px rgba(0, 122, 255, 0.4);
+        }
+
+        .btn-whatsapp {
+            background-image: linear-gradient(115deg, #0f5229, #25d366, #128c7e, #25d366);
+            border: 1px solid #45e683;
+            box-shadow: 0 0 12px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-instagram {
+            background-image: linear-gradient(115deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
+            border: 1px solid #f09433;
+            box-shadow: 0 0 12px rgba(220, 39, 67, 0.4);
+        }
+
+        @keyframes quickGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 5. Butonlar Bölümü */
+        .links-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 12px 16px;
+            color: #ffffff;
+            text-decoration: none;
+            position: relative;
+            background: #000000;
+            border-radius: 24px;
+            z-index: 1;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(115deg, #ff007f, #00f0ff, #ff007f, #00f0ff);
+            background-size: 400% 400%;
+            border-radius: 26px;
+            z-index: -1;
+            animation: neonGlow 6s linear infinite;
+        }
+
+        .link-btn::after {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(115deg, #ff007f, #00f0ff, #ff007f, #00f0ff);
+            background-size: 400% 400%;
+            border-radius: 26px;
+            z-index: -2;
+            filter: blur(8px);
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+            animation: neonGlow 6s linear infinite;
+        }
+
+        .link-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .link-btn:hover::after {
+            opacity: 1;
+            filter: blur(14px);
+        }
+
+        @keyframes neonGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .link-btn img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid white;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .icon-placeholder {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #111;
+            border: 2px solid #00f0ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+
+        .btn-text {
+            flex-grow: 1;
+            text-align: left;
+            font-weight: bold;
+            font-size: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 6. SSS / FAQ BÖLÜMÜ STİLLERİ */
+        .faq-section {
+            width: 100%;
+            margin-top: 45px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #00f0ff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+        }
+
+        .faq-item {
+            background: #0a0a0c;
+            border: 1px solid #22222a;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 16px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .faq-question:hover {
+            background-color: #121218;
+        }
+
+        .faq-toggle-icon {
+            font-size: 18px;
+            color: #00f0ff;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #050507;
+            color: #cccccc;
+            font-size: 13px;
+            line-height: 1.6;
+            padding: 0 16px;
+        }
+
+        .faq-item.active {
+            border-color: #00f0ff;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 250px;
+            padding: 14px 16px;
+        }
+
+        .faq-item.active .faq-toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        /* 🌟 SİTE İÇİ FORM PENCERESİ (MODAL) STİLLERİ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            width: 95%;
+            max-width: 550px;
+            height: 88vh;
+            background: #0d0d11;
+            border: 2px solid #00f0ff;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            background: #14141d;
+            border-bottom: 1px solid #222230;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 15px;
+            color: #00f0ff;
+            font-weight: bold;
+        }
+
+        .close-modal {
+            background: #222230;
+            border: none;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .close-modal:hover {
+            background: #ff007f;
+        }
+
+        .modal-body {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 12px;
+            color: #666666;
+            margin-top: 40px;
+            padding-bottom: 20px;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Canlı Logo -->
+        <div class="logo-wrapper">
+            <img src="logo.gif" alt="Dj Okan Uyar">
+        </div>
+
+        <!-- BİYOGRAFİ BAŞLIĞI -->
+        <div class="bio-text">
+            <strong>"18 YEARS OF EXPERIENCE"</strong><br>
+            <div class="bio-title">PREMIUM SOUND & EVENT MANAGEMENT</div>
+        </div>
+
+        <!-- ÜÇLÜ RENKLİ & HAREKETLİ HIZLI ERİŞİM BUTONLARI -->
+        <div class="quick-social-wrapper">
+            <a href="tel:+905455806526" class="quick-btn btn-call">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                <span>Bizi Arayın</span>
+            </a>
+
+            <a href="https://wa.me/905455806526?text=Merhaba%20Okan%20Bey,%20organizasyonum%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="quick-btn btn-whatsapp">
+                <svg viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>WhatsApp</span>
+            </a>
+
+            <a href="https://www.instagram.com/djokanuyar/" target="_blank" class="quick-btn btn-instagram">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <span>Instagram</span>
+            </a>
+        </div>
+
+        <!-- SİTE İÇİNDE AÇILAN PLANLAMA BUTONLARI -->
+        <div class="links-wrapper">
+            
+            <button onclick="openFormModal('https://docs.google.com/forms/d/e/1FAIpQLScdn0kP77Euxke-KUwARR3HxkUurcdzcQGQvrY96D_tn8TTAA/viewform?embedded=true', 'Düğün Daveti Planlama Formu')" class="link-btn">
+                <img src="dugun.jpg" alt="Düğün">
+                <span class="btn-text">Düğün Daveti Planlamak İstiyorum</span>
+            </button>
+
+            <button onclick="openFormModal('https://docs.google.com/forms/d/e/1FAIpQLScCr6THAdDMBMI0zk23WIDRkQ7iKR02rdsvvxPfAuauneg3Dw/viewform?embedded=true', 'Kına Gecesi Planlama Formu')" class="link-btn">
+                <img src="kina.jpg" alt="Kına">
+                <span class="btn-text">Kına Gecesi Planlamak İstiyorum</span>
+            </button>
+
+            <button onclick="openFormModal('https://docs.google.com/forms/d/e/1FAIpQLSc9YPkInKdM4hRSwascIeHhwKf92kvYDjCYYAHjQLOMoIQzRA/viewform?embedded=true', 'Nişan Daveti Planlama Formu')" class="link-btn">
+                <img src="nisan.jpg" alt="Nişan">
+                <span class="btn-text">Nişan Daveti Planlamak İstiyorum</span>
+            </button>
+
+            <button onclick="openFormModal('https://docs.google.com/forms/d/e/1FAIpQLScQwgg0t83tWy8DXLrcGA3ctLhCyYldhJSrO8yhZNUF9CBH2Q/viewform?embedded=true', 'Mezuniyet Balosu Planlama Formu')" class="link-btn">
+                <img src="mezuniyet.jpg" alt="Mezuniyet">
+                <span class="btn-text">Mezuniyet Balosu Planlamak İstiyorum</span>
+            </button>
+
+            <button onclick="openFormModal('https://docs.google.com/forms/d/e/1FAIpQLScj29ja6K_xsSOObhQ4e38GwqVaahq1tdC46N2EBQjWEVBZZA/viewform?embedded=true', 'Sünnet Düğünü Planlama Formu')" class="link-btn">
+                <img src="sunnet.jpg" alt="Sünnet">
+                <span class="btn-text">Sünnet Düğünü Planlamak İstiyorum</span>
+            </button>
+
+            <a href="#faq" class="link-btn">
+                <div class="icon-placeholder">💬</div>
+                <span class="btn-text">Sıkça Sorulan Sorular</span>
+            </a>
+
+        </div>
+
+        <!-- SSS BÖLÜMÜ -->
+        <div id="faq" class="faq-section">
+            <div class="faq-title">💬 Sıkça Sorulan Sorular</div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>1. Müzik tercihlerimizi ve akışı nasıl belirliyoruz?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Yukarıdaki butonlardan etkinliğinize özel formu doldurabilirsiniz. Giriş müziğinizden ilk dansa, pasta kesiminden kesinlikle çalınmasını istemediğiniz "Kara Liste" şarkılarına kadar tüm detayları dijital ortamda bize iletebilirsiniz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>2. Ses, ışık ve sahne ekipmanını siz mi getiriyorsunuz?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Evet, mekanın kapasitesine ve konseptine uygun profesyonel ses sistemleri, kablosuz mikrofonlar, robot ışıklar ve sahne efekt sistemlerini kendi bünyemizde eksiksiz olarak kuruyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>3. Etkinlik günü sahnede DJ olarak kim yer alacak?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Tüm süreç DJ Okan Uyar Ses Işık Organizasyon Hizmetleri çatısı altında kurumsal bir yapıyla yürütülmektedir. Bütçelendirme, konsept planlaması ve etkinlik öncesi tüm detaylı ön görüşmeler bizzat DJ Okan Uyar tarafından gerçekleştirilir. Etkinlik gününde ise organizasyonun büyüklüğüne ve yapılan anlaşmaya göre, profesyonel DJ arkadaşlarıyla birlikte veya bizzat DJ Okan Uyar'ın kendi performansıyla sahnenizde yer alınarak eksiksiz bir hizmet sunulmaktadır.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>4. Şehir dışı organizasyonlara gidiyor musunuz?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Türkiye genelindeki tüm şehir dışı organizasyonlarda ve açık/kapalı her türlü mekanda teknik altyapı kurulumu ve DJ performans hizmeti sunuyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>5. Kurulum ve ses provaları ne zaman yapılıyor?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Etkinlik saatinden en az 2-3 saat önce mekanda olup tüm teknik ses, ışık ve mikser kurulumlarını tamamlıyoruz. Davetliler salona girmeden ses provaları (soundcheck) eksiksiz bitmiş olur.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>6. Davetlilerden gelen anlık istek şarkılar çalınıyor mu?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Ana akışımız sizin doldurduğunuz form doğrultusunda ilerler. Davetlilerden gelen istek şarkılar, belirlediğiniz konsepte ve gecenin enerjisine uygun olduğu sürece programa dahil edilir.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>7. Rezervasyon sürecimiz nasıl işliyor?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Öncelikle tarihin Müsaitlik durumunu doğruluyoruz. Tarihinize karar verdikten sonra karşılıklı detayları netleştirip organizasyon gününüzü takvimimize ekliyoruz. Sezon yoğunluğu nedeniyle tarihinizi en az 2-3 ay önceden sabitlemenizi öneririz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>8. Olumsuz hava koşulları veya teknik aksaklıklara karşı önleminiz var mı?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Sistemlerimiz akım korumalı güç kaynakları (UPS) ve yedekli dijital mikser/mikrofon altyapısı ile korunmaktadır. Açık alan organizasyonlarında mekan yönetimiyle koordineli çalışarak her türlü teknik ve hava durumuna karşı kesintisiz akış sağlıyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>9. DJ performansına ek olarak canlı enstrüman eklenebiliyor mu?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Evet, DJ performansımıza eşlik edecek saksafon, perküsyon, bando veya karşılama müzisyenleri gibi canlı performans sanatçılarını organizasyonunuza ekstra olarak dahil edebiliyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>10. Drone ve sinematik video çekim hizmetiniz var mı?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Evet, bünyemizde profesyonel drone ve 4K sinematik video çekim hizmeti sunuyoruz. Düğün ve organizasyonunuzun tüm özel anlarını, sahne atmosferini ve davetli coşkusunu yüksek kalitede ölümsüzleştiriyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>11. Etkinlik öncesinde mekanda teknik keşif yapıyor musunuz?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Etkinlik tarihinden önce alanın akustiğini, elektrik altyapısını ve sahne yerleşimini incelemek adına gerekli durumlarda mekan keşfi gerçekleştiriyor, kurulacak ses-ışık sistemini alana özel planlıyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>12. Etkinlik bitiminde After-Party ile süreyi uzatabiliyor muyuz?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Mekanını izin verdiği yasal ve teknik süreler dahilinde, talebinize bağlı olarak performansımızı After-Party konseptiyle uzatabiliyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>13. Sadece ses ve ışık sistemi kiralayabiliyor duyuz?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Evet, DJ hizmetimizden bağımsız olarak mekanınıza ve davetli sayınıza uygun profesyonel ses sistemleri, DMX robot ışıklar, kablosuz mikrofonlar ve sahne ekipmanı kiralama/kurulum hizmeti sunuyoruz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>14. Karşılama müziği ve seramoni müziklerini kim yönetiyor?</span>
+                    <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Etkinliğin kapı açılışından (davetli karşılaması), nikah/pasta seramonisine ve gecenin son şarkısına kadar olan tüm ses ve müzik akışı tarafımızdan kesintisiz olarak yönetilmektedir.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-text">
+            © 2026 DJ OKAN UYAR. ALL RIGHTS RESERVED.
+        </div>
+
+    </div>
+
+    <!-- SİTE İÇİ PENCERE (MODAL OVERLAY) -->
+    <div id="formModal" class="modal-overlay" onclick="closeFormModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="modalTitle">Etkinlik Planlama Formu</h3>
+                <button class="close-modal" onclick="closeFormModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="formIframe" src="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT KODLARI -->
+    <script>
+        // SSS Açılır Kapanır Mantığı
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) item.classList.remove('active');
+                });
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Site İçi Modal Açma / Kapama Mantığı
+        function openFormModal(url, title) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('formIframe').src = url;
+            const modal = document.getElementById('formModal');
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('active'); }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFormModal(event) {
+            const modal = document.getElementById('formModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.getElementById('formIframe').src = '';
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeFormModal();
+        });
+    </script>
+
+</body>
+</html>
